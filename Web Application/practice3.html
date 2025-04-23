@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kieran Egan | Practice 3</title>
+</head>
+<body>
+
+    <h2>Password Verification Tool</h2>
+    <form onsubmit="verifyPassword(event)">
+        <label for="password1">Enter Password:</label>
+        <input type="password" id="password1" required>
+        <br><br>
+
+        <label for="password2">Re-enter Password:</label>
+        <input type="password" id="password2" required>
+        <br><br>
+
+        <input type="submit" value="Verify">
+    </form>
+
+    <script>
+        function verifyPassword(event) {
+            event.preventDefault(); // Prevent form from submitting
+
+            let password1 = document.getElementById("password1").value;
+            let password2 = document.getElementById("password2").value;
+
+            if (password1.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                return;
+            }
+
+            if (password1 !== password2) {
+                alert("Passwords do not match. Please try again.");
+                return;
+            }
+
+            alert("Passwords matched successfully!");
+        }
+    </script>
+
+</body>
+</html>

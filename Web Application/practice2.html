@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kieran Egan | Practice 2</title>
+
+    <style>
+        #styledParagraph {
+            padding: 10px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="styledParagraph">
+        What does it mean to sit and stare? Does one really ever fall asleep? These are a few of the many questions answered in this month's edition of Kieran's Wacky Ad Libs.
+        Some may say these are silly and pointless questions. And yet, my answer to these criticisms is to present a new question altogether: do questions hold inherent meaning?
+        I would argue that some questions can simply exist as a fun thought experiment. There isn't a single correct answer, but an attempt to provoke contemplation. If that is achieved in
+        my Ad Libs, then I will be nothing but ecstatic. 
+    </p>
+
+    <br/><br/>
+
+    <form onsubmit="applyStyles(event)">
+        <label>Enter RGB values for the text color:</label>
+        <input type="text" id="textColor" placeholder="R,G,B">
+        <br/><br/>
+
+        <label>Enter RGB values for the border color:</label>
+        <input type="text" id="borderColor" placeholder="R,G,B">
+        <br/><br/>
+
+        <label>Enter border width:</label>
+        <input type="number" id="borderWidth" placeholder="">
+        <br/><br/>
+
+        <input type="submit" value="Apply Styles">
+    </form>
+
+    <script>
+        function applyStyles(event) {
+            event.preventDefault(); // Prevent form submission and page refresh
+
+            let paragraph = document.getElementById("styledParagraph");
+
+            // Get user input
+            let textColor = document.getElementById("textColor").value;
+            let borderColor = document.getElementById("borderColor").value;
+            let borderWidth = document.getElementById("borderWidth").value;
+
+            // Apply styles if values are provided
+            if (textColor) {
+                paragraph.style.color = `rgb(${textColor})`;
+            }
+            if (borderColor) {
+                paragraph.style.borderColor = `rgb(${borderColor})`;
+            }
+            if (borderWidth) {
+                paragraph.style.borderWidth = `${borderWidth}px`;
+            }
+        }
+    </script>
+</html>
